@@ -1,0 +1,17 @@
+#lang scheme
+; 最顶上的1的坐标为 ( 0,0 )
+; 第二排的两个坐标分别是 ( 0,-1 ) ( 0,1 )
+(define (psk x y)
+    (cond ((and (= x 0)
+                (= y 0))  1) 
+          ( (< x (abs y)) 0)
+          ( (= x (abs y)) 1)
+          ( else  (+  (psk (- x 1) (+ y 1))
+                      (psk (- x 1) (- y 1))))))
+
+(psk 0 0)
+(psk 1 -1)
+(psk 1 1)
+(psk 2 -2)
+(psk 2 0)
+(psk 2 2)

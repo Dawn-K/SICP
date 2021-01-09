@@ -69,3 +69,43 @@ if表达式作为运算符, 当 b>0时, 第二行变为 (+ a b), 否则为(- a b
 ## 1.8
 
 @import "../../src/Ch01/1-8.scm" {as="scheme"}
+
+## 1.9
+
+为方便讨论, 我们令题中的+为f, 下文中的+是真的 `+1`
+
+``` scheme
+(f a b)
+(+ 1 (f (- a 1) b))
+(+ 1 (+ 1 (f (- (- a 1) 1) b)))
+```
+
+可见第一种方式是递归计算的
+
+``` scheme
+(f a b)
+(f (- a 1) (+ b 1))
+(f (- (- a 1) 1) (+ (+ b 1) 1))
+```
+
+可见第二种方式是迭代计算的
+
+## 斐波那契
+
+@import "../../src/Ch01/fib.scm" {as="scheme"}
+
+## 找零钱
+
+书上代码
+@import "../../src/Ch01/change.scm" {as="scheme"}
+
+尝试改进代码(未成功)
+@import "../../src/Ch01/change_faster.scm" {as="scheme"}
+
+## 1.11
+
+@import "../../src/Ch01/1-11.scm" {as="scheme"}
+
+## 1.12
+
+@import "../../src/Ch01/1-12.scm" {as="scheme"}
